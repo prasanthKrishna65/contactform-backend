@@ -1,9 +1,8 @@
 services:
   - type: web
     name: contactform-backend
-    env: java
-    buildCommand: ./mvnw clean package -DskipTests
-    startCommand: java -jar target/*.jar
-    envVars:
-      - key: JAVA_VERSION
-        value: 17
+    runtime: docker
+    repo: https://github.com/prasanthKrishna65/contactform-backend
+    branch: main
+    plan: free
+    autoDeploy: true
